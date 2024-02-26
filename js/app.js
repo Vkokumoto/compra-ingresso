@@ -2,6 +2,11 @@ function comprar() {
     let tipoIngresso = document.getElementById('tipo-ingresso');
     let quantidade = parseInt(document.getElementById('qtd').value);
 
+    if (quantidade <= 0 || isNaN(quantidade)) {
+        alert('Quantidade digitada inválida. Tente novamente!');
+        return;
+    }
+
     if(tipoIngresso.value == 'pista') {
         comprarPista(quantidade);
     } else if (tipoIngresso.value == 'superior'){
